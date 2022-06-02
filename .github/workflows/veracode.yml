@@ -37,11 +37,11 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore **/*.csproj
+      run: dotnet restore 
     - name: Build
-      run: dotnet build **/*.csproj --no-restore
+      run: dotnet build --no-restore
     - name: Publish
-      run: dotnet publish **/*.csproj -c Release -o api
+      run: dotnet publish -c Release -o api
 
     - run: zip -r veracode-scan-target.zip ./api
 
